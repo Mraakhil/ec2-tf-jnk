@@ -55,11 +55,3 @@ tags= {
 }
 
 #creating s3 bucket
-data "aws_outposts_outpost" "example" {
-  arn = "arn:aws:outposts:us-east-1:123456789012:outpost/op-1234567890abcdef"
-}
-
-resource "aws_s3control_bucket" "example" {
-  bucket     = "example-bucket"
-  outpost_id = data.aws_outposts_outpost.example.id
-}
